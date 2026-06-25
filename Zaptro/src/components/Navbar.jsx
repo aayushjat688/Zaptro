@@ -3,9 +3,9 @@ import { RiMapPinLine } from "react-icons/ri";
 import { FaCaretDown } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { Show, SignInButton, UserButton } from '@clerk/react'
-import { useState } from "react";
-const Navbar = ({location , getLocation})=> {
-  const [openDropdown , setOpenDropDown] = useState(false);
+// import { useState } from "react";
+const Navbar = ({location , getLocation , openDropdown , setOpenDropDown})=> {
+
   function toggle () {
     setOpenDropDown(!openDropdown);
   }

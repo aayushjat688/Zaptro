@@ -13,7 +13,8 @@ import axios from 'axios';
 
 function App() {
 const [location , setLocation] = useState([]);
-
+  const [openDropdown , setOpenDropDown] = useState(false);
+   
 const getLocation = async () =>{
   navigator.geolocation.getCurrentPosition(pos => {
     const { latitude , longitude} =  pos.coords;
@@ -25,6 +26,7 @@ const getLocation = async () =>{
        const location =await axios.get(url);
       //  console.log(location.data.address);
       setLocation(location.data.address);
+      setOpenDropDown(false);
      }
      locatort();
      
@@ -41,7 +43,7 @@ getLocation();
 
   return (
   <BrowserRouter>
-  <Navbar location={location} getLocation={getLocation}/>
+  <Navbar location={location} getLocation={getLocation} openDropdown={openDropdown} setOpenDropDown={setOpenDropDown}/>
   <Routes>
     <Route path="/" element={<Home />}></Route>
     <Route path='/products' element={<Products />}></Route>
