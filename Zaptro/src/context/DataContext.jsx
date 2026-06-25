@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const DataContext = createContext(null);
 export const DataProvider = ({children}) =>{
   const [data , setData] = useState();
@@ -25,4 +26,5 @@ export const DataProvider = ({children}) =>{
   )
 }
 
+// eslint-disable-next-line react-hooks/rules-of-hooks, react-refresh/only-export-components
 export const getData = ()=> useContext(DataContext);

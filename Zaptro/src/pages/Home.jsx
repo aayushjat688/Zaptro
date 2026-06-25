@@ -1,3 +1,5 @@
+
+import Features from "../components/Features"
 import Carosel from "../components/Carosel"
 import MidBanner from "../components/MidBanner"
 const Home = () => {
@@ -5,6 +7,7 @@ const Home = () => {
     <>
      <Carosel />
     <MidBanner />
+    <Features />
     </>
   )
 }
