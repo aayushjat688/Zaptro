@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const DataContext = createContext(null);
 export const DataProvider = ({children}) =>{
@@ -24,3 +24,5 @@ export const DataProvider = ({children}) =>{
     </DataContext.Provider>
   )
 }
+
+export const getData = ()=> useContext(DataContext);
