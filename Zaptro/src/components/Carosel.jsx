@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Category from "./Category";
 
 
 const Carousel = () => {
@@ -12,7 +13,7 @@ const Carousel = () => {
 
   useEffect(() => {
     fetchAllProducts()
-  }, [fetchAllProducts]);
+  }, []);
 
   return (
     <div className="w-full">
@@ -49,6 +50,7 @@ const Carousel = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <Category />
     </div>
   )
 }
