@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Products from './pages/Products'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import Footer from './pages/Footer'
 
 
 function App() {
@@ -54,6 +55,7 @@ getLocation();
 
 
   </Routes>
+  <Footer />
   </BrowserRouter>
   )
 }
