@@ -1,7 +1,7 @@
-
+import Carosel from "../components/Carosel"
 const Home = () => {
   return (
-    <div>Home</div>
+    <Carosel />
   )
 }
 
