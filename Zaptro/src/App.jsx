@@ -10,6 +10,7 @@ import Products from './pages/Products'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import Footer from './pages/Footer'
+import SinglePage from './pages/SinglePage'
 
 
 function App() {
@@ -48,6 +49,7 @@ getLocation();
   <Routes>
     <Route path="/" element={<Home />}></Route>
     <Route path='/products' element={<Products />}></Route>
+    <Route path='/products/:id' element={<SinglePage />}></Route>
     <Route path="/about" element={<About />}></Route>
     <Route path="/contact" element={<Contact />}></Route>
     <Route path="/cart" element={<Cart />}></Route>

@@ -16,10 +16,12 @@ const Products = () => {
   const {data,fetchAllProducts} = getData();
   useEffect(()=>{
 fetchAllProducts();
+window.scrollTo(0,0)
   },[])
 
   const handleCategoryChange = (e)=>{
     setCategory(e.target.value);
+    setPage(1);
     // console.log(category);
   }
 
@@ -52,7 +54,7 @@ fetchAllProducts();
                     })
                 }
               </div>
-                      <PaginationBottom page={page} pageHandler={pageHandler} dynamicPage={dynamicPage}/> 
+                      <PaginationBottom page={page} setPage={setPage} pageHandler={pageHandler} dynamicPage={dynamicPage}/> 
                   </div>
                 )
                 : (<div className="flex md:h-[600px] md:w-[900px] mt-10 items-center justify-center">

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 
-const FilterSection = ({category, setCategory, priceRange, setPriceRange, search, setSearch, handleCategoryChange}) => {
+const FilterSection = ({category,setPage ,  setCategory, priceRange, setPriceRange, search, setSearch, handleCategoryChange}) => {
   const {categoryOnlyData} = useContext(DataContext)
   return (
     <div className="bg-gray-100 mt-10 p-4 rounded-md h-max ">
@@ -30,6 +30,7 @@ const FilterSection = ({category, setCategory, priceRange, setPriceRange, search
          <button className="bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer"
          onClick={()=>{setSearch("");setCategory('All');
           setPriceRange( [0,1000])
+          setPage(1);
          }}>
           Reset Filters</button>
 
