@@ -3,16 +3,11 @@
 import {  getData } from "../context/DataContext"
 
 const Category = ()=> {
-  const {data} = getData();
+  const {categoryOnlyData} = getData();
 
-  const getUniqueCategory = (data,property) =>{
-    let newVal = data?.map((curElem)=>{
-      return(curElem[property])
-    })
-    return [...new Set(newVal)];
-  }
 
-  const categoryOnlyData = getUniqueCategory(data,"category");
+
+
   // console.log(categoryOnlyData);
  
   return (

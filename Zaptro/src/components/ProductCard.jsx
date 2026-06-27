@@ -1,6 +1,6 @@
 import { LuShoppingCart } from "react-icons/lu";
 const ProductCard = ({product}) => {
-  console.log(product);
+  // console.log(product);
   return (
     <div className="border relative border-gray-100 rounded-2xl hover:scale-105 cursor-pointer
     transition-all p-2 h-max ">
