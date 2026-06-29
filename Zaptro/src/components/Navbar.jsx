@@ -3,9 +3,10 @@ import { RiMapPinLine } from "react-icons/ri";
 import { FaCaretDown } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { Show, SignInButton, UserButton } from '@clerk/react'
+import { useCart } from "../context/CartContext";
 // import { useState } from "react";
 const Navbar = ({location , getLocation , openDropdown , setOpenDropDown})=> {
-
+    const {cartItem} = useCart();
   function toggle () {
     setOpenDropDown(!openDropdown);
   }
@@ -64,7 +65,7 @@ const Navbar = ({location , getLocation , openDropdown , setOpenDropDown})=> {
 
             </ul>
 
-            <Link to={'/cart'} className="h-7 w-7 text-2xl"><LuShoppingCart /><span className="bg-red-500 text-white w-4 h-4 flex items-center justify-center rounded-full absolute top-2 ">0</span></Link>
+            <Link to={'/cart'} className="h-7 w-7 text-2xl"><LuShoppingCart /><span className="bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full absolute top-2 ">{cartItem.length}</span></Link>
             
 
                <div>

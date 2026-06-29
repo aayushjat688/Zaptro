@@ -13,10 +13,12 @@ import Footer from './pages/Footer'
 import SinglePage from './pages/SinglePage'
 
 
+
 function App() {
 const [location , setLocation] = useState([]);
   const [openDropdown , setOpenDropDown] = useState(false);
-   
+    
+
 const getLocation = async () =>{
   navigator.geolocation.getCurrentPosition(pos => {
     const { latitude , longitude} =  pos.coords;
@@ -52,7 +54,7 @@ getLocation();
     <Route path='/products/:id' element={<SinglePage />}></Route>
     <Route path="/about" element={<About />}></Route>
     <Route path="/contact" element={<Contact />}></Route>
-    <Route path="/cart" element={<Cart />}></Route>
+    <Route path="/cart" element={<Cart location={location} geolocation={getLocation}/>}></Route>
 
 
 
