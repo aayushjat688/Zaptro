@@ -3,12 +3,12 @@ import { useCart } from "../context/CartContext"
 import { LuNotebookPen } from "react-icons/lu";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaShoppingBag } from "react-icons/fa";
-
-import { useState } from "react";
+import { useNavigate } from "react-router";
+import emptyCart from "../assets/empty-cart.png"
 const Cart = ({location , getLocation}) => {
-  const {cartItem} = useCart();
+  const navigate = useNavigate();
+  const {cartItem , updateQuantity , deleteItem} = useCart();
   // console.log(cartItem);
-  const [quantity , setQuantity] = useState(1);
 
 
   const totalPrice = cartItem.reduce((total , item)=> total + item.price , 0)
@@ -30,12 +30,12 @@ const Cart = ({location , getLocation}) => {
                       </div>
                     </div>
                     <div className="bg-red-500 text-white flex gap-4 p-4 rounded-md font-bold text-xl">
-                      <button className="cursor-pointer">-</button>
-                      <span>{quantity}</span>
-                      <button className="cursor-pointer">+</button>
+                      <button className="cursor-pointer" onClick={()=>updateQuantity(cartItem, item.id , "decrease")}>-</button>
+                      <span>{item.quantity}</span>
+                      <button className="cursor-pointer" onClick={()=>updateQuantity(cartItem,item.id , "increase")}>+</button>
                     </div>
-                    <span className="hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl  cursor-pointer">
-                        <FaRegTrashAlt className="text-red-500 text-2xl"/>
+                    <span className="hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl  cursor-pointer" >
+                        <FaRegTrashAlt onClick={()=>deleteItem(item.id)} className="text-red-500 text-2xl"/>
                     </span>
                   </div>
                 })}
@@ -118,7 +118,11 @@ const Cart = ({location , getLocation}) => {
               </div>
               
             </div>
-        </div> : <div>Cart is empty</div>
+        </div> : <div className="flex flex-col justify-center items-center gap-3 h-[600px]">
+          <h1 className="text-red-500/80 font-bold text-5xl text-muted">Oh no! cart is empty</h1>
+          <img src={emptyCart} className="w-[400px]" alt="" />
+          <button onClick={()=>navigate('/products')} className='bg-red-500 hover:bg-red-600 cursor-pointer text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300'>Shop Now</button>
+        </div>
       }
     </div>
   )
