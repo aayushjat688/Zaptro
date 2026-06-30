@@ -13,7 +13,7 @@ const Category = ()=> {
  
   return (
     <div className="bg-[#101829]">
-       <div className="max-w-7xl mx-auto items-center flex gap-4 justify-around py-7 px-4">
+       <div className="max-w-7xl mx-auto items-center flex-wrap flex gap-4 justify-around py-7 px-4">
         {
           categoryOnlyData.map((item,index)=>{
             return <div key={index}>

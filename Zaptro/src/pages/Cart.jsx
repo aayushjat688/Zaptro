@@ -18,14 +18,14 @@ const Cart = ({location , getLocation}) => {
         cartItem.length > 0 
         ? <div  className="">
             <h1 className="text-2xl font-bold">My Cart ({cartItem.length})</h1>
-            <div>
-              <div className="mt-10">
+            <div className="overflow-x-none">
+              <div className="mt-10  ">
                 {cartItem.map((item, index)=>{
-                  return <div key={index} className="bg-gray-100 p-5 rounded-md flex items-center justify-between mt-3 w-full">
+                  return <div key={index} className="bg-gray-100 p-5 rounded-md flex flex-col items-baseline gap-5 md:gap-0 md:flex-row  md:items-center justify-between mt-3 w-full">
                     <div className="flex items-center gap-4 ">
                       <img src={item.image} alt={item.title} className="w-20 h-20 rounded-md "/>
                       <div>
-                        <h1 className="w-[300px] line-clamp-2">{item.title}</h1>
+                        <h1 className=" md:w-[300px] line-clamp-2">{item.title}</h1>
                         <p className="text-red-500 font-semibold texxt-lg">${item.price}</p>
                       </div>
                     </div>
@@ -40,7 +40,8 @@ const Cart = ({location , getLocation}) => {
                   </div>
                 })}
               </div>
-              <div className="grid grid-cols-2 gap-20">
+
+              <div className="grid md:grid-cols-2 grid-rows-1 gap-20">
                 <div className="bg-gray-100 rounded-md p-7 mt-4 space-y-2 ">
                   <h1 className="text-gra-800 font-bold text-xl">Delivery Info</h1>
 
@@ -104,7 +105,7 @@ const Cart = ({location , getLocation}) => {
                   <hr className="text-gray-200 mt-2" />
                   <div className="flex items-center justify-center">
                     <h1 className="font-semibold text-lg">Grand total</h1>
-                    <p className="font-semibold text-lg">${totalPrice + 5}</p>
+                    <p className="font-semibold text-lg">${(totalPrice + 5)}</p>
                   </div>
 
 <h1 className="font-semibold text-gray-700 mb-3 mt-7">Apply Promo Code</h1>

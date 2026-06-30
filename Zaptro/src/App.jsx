@@ -11,7 +11,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios';
 import Footer from './pages/Footer'
 import SinglePage from './pages/SinglePage'
-import CategoryProduct from './pages/CategoryProduct'
 
 
 

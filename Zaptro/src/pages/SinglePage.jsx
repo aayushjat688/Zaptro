@@ -32,13 +32,13 @@ const title = singleProduct.title;
       singleProduct ? 
       <div className="px-4 pb-4 md:px-0">
         <Breadcrums title={title}/>
-        <div className="max-w-6xl mx-auto md:p-6 grid grid-cols-2 gap-10">
-          <div>
-            <img src={singleProduct.image} alt={singleProduct.title} className="rounded-2xl w-full object-cover"/>
+        <div className="max-w-6xl mx-auto md:p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
+          <div className="flex justify-center items-center md:flex-none">
+            <img src={singleProduct.image} alt={singleProduct.title} className="rounded-2xl md:w-full w-[250px] object-cover"/>
           </div>
 
           <div className="flex flex-col gap-6">
-            <h1 className="md:text-3xl font-bold text-gray-800">{singleProduct.title}</h1>
+            <h1 className="text-center text-3xl font-bold text-gray-800">{singleProduct.title}</h1>
             <div className="text-gray-700 ">{singleProduct.category?.toUpperCase()}</div>
             <p className="text-xl text-red-500 font-bold">${singleProduct.price}</p>
             <p className="text-gray-600">

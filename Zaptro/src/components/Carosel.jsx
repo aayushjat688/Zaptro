@@ -31,19 +31,19 @@ const Carousel = () => {
         {data?.slice(0, 7).map((item, index) => (
           <SwiperSlide key={index}>
             <div className="bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10">
-              <div className="flex gap-10 justify-center h-full items-center px-4">
-                <div className="space-y-6">
+              <div className="flex gap-10 md:flex-row flex-col justify-center h-full items-center px-4">
+                <div className=" md:space-y-6">
                   <h3 className="text-red-500 font-semibold font-sans text-sm">✨ Shop the Most Loved Products
                   </h3>
                   <h1 className="text-4xl font-bold uppercase line-clamp-3 w-[500] text-white">
                     {item.title}
                   </h1>
                   <p className="md:w-[500px]  line-clamp-3 text-gray-400 pr-7">{item.description}</p>
-                  <button onClick={()=>navigate(`/products/${item.id}`)} className="bg-gradient-to-r from-red-500 to-purple-500
-                  text-white px-3 py-2 rounded-md cursor-pointer mt-2">Shop Now</button>
+                 <button onClick={()=>navigate(`/products/${item.id}`)} className="bg-gradient-to-r from-red-500 to-purple-500
+                  text-white px-3 py-2 rounded-md hidden md:block cursor-pointer mt-2">Shop Now</button> 
                 </div>
                 <div className="">
-                   <img className="rounded-full w-[500px] hover:scale-105 transition-all bg-white shadow-2xl shadow-red-400" onClick={()=>navigate(`/products/${item.id}`)}  src={item.image} alt={item.title} />
+                   <img className="rounded-full w-[250px] md:w-[500px] hover:scale-105 transition-all bg-white shadow-2xl shadow-red-400" onClick={()=>navigate(`/products/${item.id}`)}  src={item.image} alt={item.title} />
                 </div>
               </div>
              

@@ -42,12 +42,12 @@ window.scrollTo(0,0)
         {
           data?.length > 0 ? (
             <>
-            <div className="flex gap-8">
+            <div className="flex gap-8 ">
               <FilterSection search={search} setSearch={setSearch} priceRange={priceRange} setPriceRange={setPriceRange} category={category} setCategory={setCategory} handleCategoryChange={handleCategoryChange}/>
               {
                 filteredData?.length > 0 ? (
                   <div className="flex flex-col justify-center items-center">
-                        <div className="grid grid-cols-4 gap-7 mt-10">
+                        <div className="grid grid-rows-1 md:grid-cols-4 gap-7 mt-10">
                 {
                     filteredData?.splice(page * 8 - 8, page * 8).map((product,index)=>{
                       return <ProductCard key={index} product={product}/>
