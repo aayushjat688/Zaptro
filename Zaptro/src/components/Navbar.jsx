@@ -22,7 +22,7 @@ const Navbar = ({location , getLocation , openDropdown , setOpenDropDown})=> {
         
         <div className="flex gap-7 items-center">
 
-          <Link to="/" className="font-bold text-3xl"><span className="text-red-500 font-serif">Z</span>aptro</Link>
+          <Link to="/" className="font-bold text-3xl relative"><span className="text-red-500 font-serif">Z</span>aptro</Link>
 
           <div className="hidden md:flex gap-1 cursor-pointer text-gray-700 items-center">
         <RiMapPinLine className="text-red-500 w-7 h-7"/>
