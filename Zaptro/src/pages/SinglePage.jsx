@@ -22,6 +22,7 @@ const SinglePage = () => {
     }
   }
   useEffect(()=>{
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     getSingleProduct();
   },[]);
 const title = singleProduct.title;
@@ -46,7 +47,7 @@ const title = singleProduct.title;
  </p>
               <div className="flex items-center gap-4">
                 <label htmlFor="" className="text-sm font-medium text-gray-700 ">Quantity:</label>
-                <input type="number" onClick={()=>""} min={1} value={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500"/>
+                <input type="number" onChange={()=>""} min={1} value={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500"/>
               </div>
               <div className="flex gap-4 mt-4">
                      <button className="flex items-center gap-2 bg-red-500 py-2 px-3 rounded-md text-lg text-white  cursor-pointer font-semibold" onClick={()=>addToCart(singleProduct)}><span><LuShoppingCart /></span>Add to Cart</button>

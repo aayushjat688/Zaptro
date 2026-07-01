@@ -1,11 +1,27 @@
 import { createContext, useContext, useState } from "react";
 import { toast } from "react-toastify";
 
-export const CartContext = createContext();
+ const CartContext = createContext();
 
 export const CartProvider = ({children})=>{
   // console.log(children);
   const [cartItem , setCartItem] = useState([]);
+
+  // useEffect(()=>{
+  //   const storedItem = localStorage.getItem('cartItem');
+  //   if(storedItem){
+  //     try{
+  //       console.log(JSON.parse(storedItem));
+  //     }finally{
+  //       console.log(cartItem);
+  //     }
+      
+  //   }
+  // },[]);
+  // useEffect(()=>{
+  //   localStorage.setItem('cartItem' , JSON.stringify(cartItem))
+  // },[cartItem])
+
   const addToCart = ({product})=>{
     const itemInCart = cartItem.find((item)=>item.id === product.id);
     if(itemInCart){
@@ -85,4 +101,5 @@ draggable: true
   </CartContext.Provider>
 
 }
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);

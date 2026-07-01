@@ -52,24 +52,24 @@ const Cart = ({location , getLocation}) => {
 
                   <div className="flex flex-col space-y-1">
                     <label htmlFor="">Address</label>
-                    <input type="text" onChange={()=>""} value={location.county} placeholder="Enter your address" className="p-2 rounded-md" />
+                    <input type="text" onChange={()=>""} value={location?.county} placeholder="Enter your address" className="p-2 rounded-md" />
                   </div>
                   <div className="flex w-full gap-5">
                     <div className="flex flex-col space-y-1 w-full">
                         <label htmlFor="">State</label>
-                        <input type="text" onChange={()=>""} value={location.state} placeholder="Enter your state" className="p-2 rounded-md w-full" />
+                        <input type="text" onChange={()=>""} value={location?.state} placeholder="Enter your state" className="p-2 rounded-md w-full" />
                     </div>
 
                      <div className="flex flex-col space-y-1 w-full">
                         <label htmlFor="">PostCode</label>
-                        <input type="text" onChange={()=>""} value={location.postcode} placeholder="Enter your postcode" className="p-2 rounded-md w-full" />
+                        <input type="text" onChange={()=>""} value={location?.postcode} placeholder="Enter your postcode" className="p-2 rounded-md w-full" />
                     </div>
                   </div>
 
                    <div className="flex w-full gap-5">
                     <div className="flex flex-col space-y-1 w-full">
                         <label htmlFor="">Country</label>
-                        <input type="text" onChange={()=>""} value={location.country} placeholder="Enter your country" className="p-2 rounded-md w-full" />
+                        <input type="text" onChange={()=>""} value={location?.country} placeholder="Enter your country" className="p-2 rounded-md w-full" />
                     </div>
 
                      <div className="flex flex-col space-y-1 w-full">
