@@ -6,6 +6,7 @@ import Loading from "../assets/Loading4.webm"
 import ProductCard from "../components/ProductCard";
 import PaginationBottom  from "../components/PaginationBottom";
 import no from "../assets/no.PNG"
+import MobileFilter from "../components/MobileFilter";
 // import notfound from "../assets/notfound.json"
 
 const Products = () => {
@@ -14,6 +15,7 @@ const Products = () => {
   const [priceRange , setPriceRange] = useState([0,1000]);
   const [page , setPage] = useState(1);
   const {data,fetchAllProducts} = getData();
+  const [openFilter , setOpenFilter] = useState(false);
   useEffect(()=>{
 fetchAllProducts();
 window.scrollTo(0,0)
@@ -22,6 +24,7 @@ window.scrollTo(0,0)
   const handleCategoryChange = (e)=>{
     setCategory(e.target.value);
     setPage(1);
+    setOpenFilter(false)
     // console.log(category);
   }
 
@@ -32,6 +35,7 @@ window.scrollTo(0,0)
   )
   const pageHandler = (selectedPage) =>{
     setPage(selectedPage);
+    window.scrollTo(0,0)
   }
   const dynamicPage = Math.ceil(filteredData?.length / 8);
 
@@ -39,11 +43,12 @@ window.scrollTo(0,0)
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 mb-10 ">
+        <MobileFilter search={search} setSearch={setSearch} priceRange={priceRange} setPriceRange={setPriceRange} category={category} setCategory={setCategory} handleCategoryChange={handleCategoryChange} openFilter={openFilter} setPage={setPage} setOpenFilter={setOpenFilter}/>
         {
           data?.length > 0 ? (
             <>
-            <div className="flex gap-8 ">
-              <FilterSection search={search} setSearch={setSearch} priceRange={priceRange} setPriceRange={setPriceRange} category={category} setCategory={setCategory} handleCategoryChange={handleCategoryChange}/>
+            <div className="flex gap-8">
+              <FilterSection  search={search} setSearch={setSearch} priceRange={priceRange} setPriceRange={setPriceRange} category={category} setCategory={setCategory} handleCategoryChange={handleCategoryChange}/>
               {
                 filteredData?.length > 0 ? (
                   <div className="flex flex-col justify-center items-center">
